@@ -1,0 +1,18 @@
+body{
+    margin: 0 auto;
+    width: 960px;
+}
+section{
+    margin-top: 300px;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    
+}
+form{
+    flex-direction: column;
+}
+span{
+    display: none;
+}

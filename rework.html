@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+    <title>Пример использования событий DOM LVL2</title>
+    <meta charset="UTF-8">
+    <script>
+    /*Задание1
+    Переделайте сценарий предыдущего примера таким образом чтобы в поля
+    вводов можно было вводить тлько целочисленные значения. Используйте
+    для этого модель обработки событий DOM Level 2.Сам пример в Source.html
+
+    Задание2
+    Разработайте JS модель который поможет привязывать обработчики
+    событий для элементов с использованием модели DOM lvl2, если 
+    она доступна или с помощью собыйти IE если DOM lvl2 не поддержи
+    вается браузером.
+    */</script>
+    <script>
+
+        window.addEventListener("load", function () {
+
+            var guard = document.getElementById("guard");
+
+            guard.addEventListener("keypress", function (e) {
+
+                if (String.fromCharCode(e.charCode) != '0'
+                    && String.fromCharCode(e.charCode) != '1'
+                    && String.fromCharCode(e.charCode) != '2'
+                    && String.fromCharCode(e.charCode) != '3'
+                    && String.fromCharCode(e.charCode) != '4'
+                    && String.fromCharCode(e.charCode) != '5'
+                    && String.fromCharCode(e.charCode) != '6'
+                    && String.fromCharCode(e.charCode) != '7'
+                    && String.fromCharCode(e.charCode) != '8'
+                    && String.fromCharCode(e.charCode) != '9'
+                    ) {
+                    // если нажатая кнопка не 0 или 1 отменить действие по умолчанию.
+                    e.preventDefault();
+                }
+
+            }, true);
+
+        }, false);
+
+    </script>
+</head>
+<body>
+    <div id="guard">
+        <input type="text" value="" />
+        <input type="text" value="" />
+        <input type="text" value="" />
+        <input type="text" value="" />
+        <input type="text" value="" />
+        <input type="text" value="" />
+        <input type="text" value="" />
+        <input type="text" value="" />
+        <input type="text" value="" />
+        <input type="text" value="" />
+        <input type="text" value="" />
+        <input type="text" value="" />
+    </div>
+</body>
+</html>
