@@ -20,11 +20,10 @@
             var output = document.getElementById("output")
             var succes = document.getElementById("succ");
             var decline = document.getElementById("dec");
-
-            if(btn.addEventListener){
-                btn.addEventListener("click", function(){
-
-                    switch(log.value == "admin" && pas.value == "12345"){
+            
+            function init (){
+                switch(log.value == "admin" && pas.value == "12345"){
+                    
                         case true:
                         log.style.backgroundColor = "green";
                             pas.style.backgroundColor = "green";
@@ -37,56 +36,15 @@
                             pas.style.backgroundColor = "red";
                             decline.style.display = "block"
                         break;
-                    }
-                
-                    // if(log.value != "admin" && pas.value != "12345"){
-                    //     log.style.backgroundColor = "red";
-                    //     pas.style.backgroundColor = "red";
-
-                    //     decline.style.display = "block"
-                    // }
-                    // else if(log.value == "admin" && pas.value == "12345") {
-                    //     log.style.backgroundColor = "green";
-                    //     pas.style.backgroundColor = "green";
-
-                    //     decline.style.display = "none"
-                    //     succes.style.display = "block"
-                    // }
-                    // else if(log.value != "admin" && pas.value == "12345"){
-                    //     log.style.backgroundColor = "red";
-                    //     pas.style.backgroundColor = "green";
-
-                    //     decline.style.display = "block"
-                    // }
-                    // else if(log.value == "admin" && pas.value != "12345"){
-                    //     log.style.backgroundColor = "green";
-                    //     pas.style.backgroundColor = "red";
-                        
-                    //     decline.style.display = "block"
-                    // }                
-                });
-            }
-
-
-            else if(btn.attachEvent){
-                btn.attachEvent("click", function(){
-                    switch(log.value == "admin" && pas.value == "12345"){
-                    case true:
-                    log.style.backgroundColor = "green";
-                        pas.style.backgroundColor = "green";
-                        succes.style.display = "block"
-                        decline.style.display = "none"
-                    break;
-
-                    case false:
-                        log.style.backgroundColor = "red";
-                        pas.style.backgroundColor = "red";
-                        decline.style.display = "block"
-                    break;
                 }
-                })
             }
-        }
+
+            if(btn.addEventListener){
+                btn.addEventListener("click", init());
+            }
+            else if(btn.attachEvent){
+                btn.attachEvent("click", init())}
+            }
     </script>
     <title>Document</title>
 </head>
